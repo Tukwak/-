@@ -63,7 +63,8 @@ export default function App() {
       title: "에어부산 신규 노선 검토 및 데이터 구조화",
       content: "노선별 마진, 시장 공급 추이 데이터 정제 및 경영진 보고용 핵심 지표 수립",
       result: "데이터 기반의 직관적 보고 체계 구축으로 경영진의 신속한 판단 지원",
-      image: "https://picsum.photos/seed/airline/800/600",
+      image: "https://raw.githubusercontent.com/Tukwak/-/99f214b041d5a5aa44350eaaa8d4b7d920f676f8/airbusan.png",
+      objectFit: "contain",
       details: [
         "노선별 마진 분석 시스템 구축",
         "시장 공급 추이 실시간 모니터링 데이터 정제",
@@ -381,11 +382,11 @@ export default function App() {
                   onClick={() => setSelectedProject(project)}
                   className="bg-white border border-black/5 group overflow-hidden cursor-pointer relative"
                 >
-                  <div className="aspect-video overflow-hidden relative">
+                  <div className="aspect-video overflow-hidden relative bg-gray-100">
                     <img 
                       src={project.image} 
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0"
+                      className={`w-full h-full ${project.objectFit === 'contain' ? 'object-contain' : 'object-cover'} group-hover:scale-110 transition-transform duration-700 grayscale hover:grayscale-0`}
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -533,11 +534,11 @@ export default function App() {
               </button>
 
               <div className="grid md:grid-cols-2">
-                <div className="bg-gray-100">
+                <div className="bg-gray-100 flex items-center justify-center overflow-hidden">
                   <img 
                     src={selectedProject.image} 
                     alt={selectedProject.title}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full ${selectedProject.objectFit === 'contain' ? 'object-contain' : 'object-cover'}`}
                     referrerPolicy="no-referrer"
                   />
                 </div>
