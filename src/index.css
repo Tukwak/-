@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Anton&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-black antialiased overflow-x-hidden;
+  }
+}
+
+.text-massive {
+  font-size: clamp(3rem, 15vw, 12rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px black;
+  color: transparent;
+}
+
+.text-outline-white {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+}
